@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Fiche mémo — L'appel de relance et l'écoute active</title>
+<style>
+:root{--prune:#8C1E70;--prune-fonce:#5E1349;--prune-clair:#F4E6EE;--accent:#C77BAA;
+ --vert:#283C28;--gris:#3C3C3C;--gris-moyen:#8A7A85;--filet:#E8DCE5;--creme:#FAF6F8;
+ --ok:#2F7A4F;--ko:#B23B3B;--amb:#B5852A;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--gris);
+ font-family:"Nunito","Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.62}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
+header.bandeau{background:var(--prune-fonce);color:#fff;padding:18px 0;border-bottom:4px solid var(--accent)}
+header.bandeau .wrap{padding-bottom:0}
+.chapitre{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#EAD3E3}
+.chapitre span{color:var(--accent);margin:0 6px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1.25;margin:8px 0 4px;color:#fff}
+.sous{color:#EAD3E3;font-size:14.5px;margin:0}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:20px;color:var(--prune-fonce);
+ margin:34px 0 0;padding-bottom:8px;border-bottom:2px solid var(--filet)}
+h2 .num{color:var(--accent);margin-right:8px}
+h3{font-size:15px;color:var(--vert);margin:20px 0 8px;letter-spacing:.02em}
+.carte{background:#fff;border:1px solid var(--filet);border-radius:10px;padding:20px 22px;margin:18px 0;
+ box-shadow:0 1px 2px rgba(94,19,73,.05)}
+.enc{background:var(--prune-clair);border-left:5px solid var(--prune);padding:14px 18px;
+ border-radius:0 8px 8px 0;margin:18px 0;font-size:15.2px}
+.enc .t{display:block;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;
+ font-weight:800;color:var(--prune-fonce);margin-bottom:6px}
+.enc.al{background:#FBF4F4;border-left-color:var(--ko)}.enc.al .t{color:var(--ko)}
+.enc.ci{background:#FCF8F0;border-left-color:var(--amb)}.enc.ci .t{color:#8A6418}
+.situ{background:#FCF9FB;border:1px dashed var(--filet);border-radius:8px;padding:16px 18px;margin:16px 0;font-size:15.2px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.duo>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:15px 17px;font-size:14.8px}
+.duo .h{font-weight:800;color:var(--prune-fonce);margin-bottom:7px;font-size:14.5px}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.tri>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:14px 15px;font-size:14.3px}
+.quad{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.quad>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:12px 13px;font-size:13.6px}
+.quad .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13px;
+ text-transform:uppercase;letter-spacing:.04em}
+.tri .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13.5px;
+ text-transform:uppercase;letter-spacing:.05em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.8px;background:#fff}
+th,td{border:1px solid var(--filet);padding:9px 12px;text-align:left}
+thead th{background:var(--prune-clair);color:var(--prune-fonce);font-size:13.5px}
+tbody th{font-weight:600;color:var(--gris)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td,tr.tot th{background:#FBF3F8;font-weight:800;color:var(--prune-fonce)}
+.dl{display:inline-flex;align-items:center;gap:9px;background:var(--prune);color:#fff;text-decoration:none;
+ padding:11px 20px;border-radius:8px;font-weight:700;font-size:15px;margin:20px 0 4px}
+.dl:hover{background:var(--prune-fonce)}
+ol.q{padding-left:0;list-style:none;counter-reset:q}
+ol.q>li{margin:16px 0;padding-left:38px;position:relative}
+ol.q>li::before{counter-increment:q;content:counter(q);position:absolute;left:0;top:1px;
+ width:26px;height:26px;border-radius:50%;background:var(--prune-clair);color:var(--prune-fonce);
+ font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+b,strong{color:var(--vert)}
+footer{text-align:center;font-size:12.5px;color:var(--gris-moyen);padding:26px 18px 12px;
+ border-top:1px solid var(--filet);margin-top:44px}
+@media(max-width:860px){.quad{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.duo,.tri,.quad{grid-template-columns:1fr}h1{font-size:22px}}
+@media print{body{background:#fff}.dl{display:none}header.bandeau{background:#5E1349 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.chaine{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:16px 0}
+.chaine .ch{background:#fff;border:1px solid var(--filet);border-radius:20px;padding:6px 13px;font-size:13.8px;font-weight:700;color:var(--prune-fonce)}
+.chaine .ch:first-child{background:var(--prune-clair)}
+.chaine .ch:last-child{background:#FBF4F4;color:var(--ko);border-color:#EBCFCF}
+.chaine .fl{color:var(--accent);font-weight:800}
+.dial{margin:14px 0}
+.rep{display:grid;grid-template-columns:120px 1fr;gap:4px 14px;padding:10px 0;border-bottom:1px solid var(--filet)}
+.rep .qui{font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--prune-fonce);padding-top:2px}
+.rep.cli .qui{color:var(--gris-moyen)}
+.rep .txt{font-size:15.2px}
+.rep.cli .txt{font-style:italic}
+.rep .com{grid-column:2;font-size:13.6px;background:#FCF8F0;border-left:4px solid var(--amb);padding:6px 11px;border-radius:0 6px 6px 0;color:#6B4E12}
+@media(max-width:640px){.rep{grid-template-columns:1fr}.rep .com{grid-column:1}}
+@media print{.rep,.enc,table,.tri{break-inside:avoid}h2{break-after:avoid}}
+
+.tl{width:100%;border-collapse:collapse;margin:12px 0;background:#fff;font-size:14.8px}
+.tl td{border:1px solid var(--filet);padding:9px 12px;vertical-align:top}
+.tl td.d{width:120px;font-weight:800;color:var(--prune-fonce);white-space:nowrap}
+.tl td.m{width:34%;background:#FCF9FB;font-size:14px}
+.mail{background:#fff;border:1px solid var(--filet);border-radius:9px;margin:14px 0;overflow:hidden}
+.mail .obj{background:var(--prune-clair);padding:9px 15px;font-size:14px;color:var(--prune-fonce)}
+.mail .cps{padding:12px 16px;font-size:14.8px}
+.mail .cps p{margin:0 0 8px}
+.src{font-size:13px;color:var(--gris-moyen);font-style:italic}
+ul.li{margin:8px 0 8px 2px;padding-left:20px}ul.li li{margin:5px 0}
+@media print{.tl,.mail{break-inside:avoid}}
+</style></head>
+<body>
+<header class="bandeau"><div class="wrap">
+ <div class="chapitre">Recouvrement · Journée 1 <span>/</span> Techniques de recouvrement — Module 3</div><h1>L'appel de relance et l'écoute active</h1><p class="sous">Fiche mémo — pourquoi le téléphone, le fil de l'appel en six temps, écoute active, empathie et réactivité</p>
+</div></header>
+<div class="wrap">
+<a class="dl" href="recouvrement_techniques_m3_memo.pdf" download>⬇ Télécharger la fiche mémo (PDF)</a>
+<h2><span class="num">1 ·</span>Pourquoi relancer par téléphone ?</h2>
+<div class="carte">
+<div class="duo"><div><div class="h"><b>Des relances seulement écrites</b></div>Le client peut les ignorer · on ne connaît pas la cause de l'impayé · aucune négociation possible · le dossier glisse vers le judiciaire.</div><div><div class="h"><b>Une relance téléphonique</b></div>Un dialogue · la cause est identifiée · une solution se construit pendant l'échange · un engagement est pris de vive voix · le client se sent considéré.</div></div>
+<div class="enc "><span class="t">L'OBJECTIF DE L'APPEL</span>Obtenir un <b>engagement de paiement adapté à la situation du client</b> — et le confirmer par écrit.</div>
+</div>
+<h2><span class="num">2 ·</span>Le fil de l'appel en six temps</h2>
+<div class="carte">
+<table><thead><tr><th>Temps</th><th>Ce que vous faites</th><th>Exemple</th></tr></thead><tbody><tr><td>1. Identifier et annoncer</td><td>Vérifier que je parle au titulaire, me présenter, annoncer l'objet de l'appel sans détour ni reproche</td><td>« Je vous appelle au sujet de la facture de 186 € du 5 mars, qui n'a pas pu être réglée. »</td></tr><tr><td>2. Faire exprimer</td><td>Laisser le client expliquer sa situation, écouter, questionner, reformuler</td><td>« Que s'est-il passé ? » — « Si je comprends bien, votre salaire arrive le 28… »</td></tr><tr><td>3. Proposer le paiement immédiat</td><td>Toujours en premier : régler maintenant, par carte ou virement</td><td>« Pouvez-vous régulariser aujourd'hui par carte bancaire ? »</td></tr><tr><td>4. Négocier ou transmettre</td><td>Chercher la solution adaptée dans ma délégation ; au-delà, transmettre et dire qui décide et quand</td><td>« Ce que je peux vous proposer, c'est… »</td></tr><tr><td>5. Obtenir l'engagement</td><td>Un montant, une date, un moyen de paiement — pour chaque versement</td><td>« Quel montant pouvez-vous verser, et à quelle date ? »</td></tr><tr><td>6. Récapituler et confirmer</td><td>Faire valider le récapitulatif, annoncer l'e-mail de confirmation, prendre congé</td><td>« Je vous envoie la confirmation par e-mail dans la foulée. »</td></tr></tbody></table>
+<div class="enc ci"><span class="t">EN APPEL ENTRANT</span>Le fil est le même quand c'est le client qui appelle : vous l'identifiez, vous faites le point sur son dossier, puis vous déroulez les mêmes temps.</div>
+</div>
+<h2><span class="num">3 ·</span>L'écoute active</h2>
+<div class="carte">
+<div class="tri"><div><div class="h"><b>LAISSER PARLER</b></div>Ne pas interrompre. Au téléphone, ponctuer de courts signaux — « oui », « je vois », « d'accord » — car un silence total fait croire que personne n'écoute.</div><div><div class="h"><b>QUESTIONNER</b></div>Des questions ouvertes pour comprendre (« Que s'est-il passé ? »), puis fermées pour préciser (« Votre salaire arrive le 28 ? »).</div><div><div class="h"><b>REFORMULER</b></div>Redire avec ses mots ce que l'on a compris et le faire valider : « Si je comprends bien, … c'est bien cela ? »</div></div>
+<p><b>Prenez des notes</b> pendant que le client parle : vous ne lui ferez pas répéter son histoire, et vous retrouverez les chiffres et les dates au moment de négocier.</p>
+</div>
+<h2><span class="num">4 ·</span>L'empathie</h2>
+<div class="carte">
+<p>Être empathique, c'est <b>comprendre ce que ressent le client sans le juger et sans l'adopter</b>. Ce n'est ni de la sympathie (ressentir la même chose que lui), ni des excuses, ni un renoncement à la somme due.</p>
+<table><thead><tr><th>Faire parler d'une situation</th><th>Faire parler de ses émotions</th><th>Aller vers une solution</th></tr></thead><tbody><tr><td>« Vous croyez que… ? »</td><td>« Vous vous sentez… »</td><td>« Vous préféreriez… ? »</td></tr><tr><td>« Vous avez l'impression que… »</td><td>« Vous avez peur de… »</td><td>« Vous voulez dire que… ? »</td></tr><tr><td>« C'est cela qui vous gêne ? »</td><td>« Cela n'a pas l'air de vous convenir. »</td><td>« Cela vous semble difficile de… ? »</td></tr><tr><td>« Vous semblez en colère contre… »</td><td>« Cela doit être gênant de… »</td><td>« Cela ne vous laisse pas assez de temps pour… ? »</td></tr><tr><td>« C'est vraiment cela qui vous ennuie ? »</td><td>« Cela vous arrangerait, on dirait. »</td><td>« Vous vous demandez pourquoi… ? »</td></tr></tbody></table>
+<div class="enc al"><span class="t">ATTENTION AUX MOTS</span>« Calmez-vous », « Ce n'est pas mon problème », « Tout le monde a des difficultés » : ces phrases ferment le dialogue. Reconnaissez l'émotion, puis revenez à la solution.</div>
+</div>
+<h2><span class="num">5 ·</span>La réactivité</h2>
+<div class="carte">
+<ul class="li"><li><b>Agir pendant l'appel</b> : consulter le dossier, calculer, proposer, sans renvoyer à plus tard.</li><li><b>Rappeler à l'heure promise</b> quand un rappel est convenu.</li><li><b>Envoyer la confirmation</b> le jour même.</li><li><b>Relancer sans attendre</b> un versement promis qui n'arrive pas.</li></ul>
+</div>
+<h2><span class="num">6 ·</span>Ce qu'il faut retenir</h2>
+<div class="carte">
+<div class="enc "><span class="t">L'ESSENTIEL DU MODULE</span>• Le téléphone permet de comprendre et de négocier : l'écrit seul ne le permet pas. • Six temps : identifier et annoncer, faire exprimer, proposer le paiement immédiat, négocier ou transmettre, obtenir l'engagement, récapituler et confirmer. • Écouter, questionner, reformuler. • L'empathie comprend l'émotion sans renoncer à l'objectif. • Être réactif, c'est agir pendant l'appel et tenir ses promesses.</div>
+</div>
+<footer>TMK Performances - N° Siret : 49841924100027 - Code NAF : 8559A</footer>
+</div>
+</body></html>
